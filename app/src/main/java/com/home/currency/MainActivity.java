@@ -23,17 +23,17 @@ public class MainActivity extends AppCompatActivity {
         String strNtd = etNtd.getText().toString();
         if (TextUtils.isEmpty(strNtd)) {
             new AlertDialog.Builder(this)
-                    .setTitle("Problem")
-                    .setMessage("Please enter you NTD amount")
-                    .setPositiveButton("OK", null)
+                    .setTitle(R.string.problem)
+                    .setMessage(R.string.please_enter_ntd)
+                    .setPositiveButton(R.string.ok, null)
                     .show();
         } else {
             float fNtd = Float.parseFloat(strNtd);
             float fCurrency = (float) (fNtd / 30.9);
             new AlertDialog.Builder(this)
-                    .setTitle("Result")
-                    .setMessage("USD is " + fCurrency)
-                    .setPositiveButton("OK", null)
+                    .setTitle(R.string.result)
+                    .setMessage(getString(R.string.usd_is) + fCurrency)
+                    .setPositiveButton(R.string.ok, null)
                     .show();
         }
     }
